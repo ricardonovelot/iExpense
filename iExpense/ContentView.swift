@@ -8,88 +8,54 @@
 import SwiftUI
 import SwiftData
 
-@Model
-class ExpenseItem {
-    let name: String
-    let type: String
-    let amount: Double
-    var id = UUID()
-    
-    init(name: String, type: String, amount: Double, id: UUID = UUID()) {
-        self.name = name
-        self.type = type
-        self.amount = amount
-        self.id = id
-    }
-}
-
 struct ContentView: View {
     
-    @State private var showingAddExpense = false
-    
     @Environment(\.modelContext) var modelContext
-    @Query var expenses: [ExpenseItem]
-        
+    @State private var showingAddExpense = false
+    @State private var categories: [(emoji: String, name: String)] = [
+        ("📋", "All"),
+        ("🏠", "Personal"),
+        ("💼", "Business")
+    ]
+    @State private var categorySelection = "All"
+    @State private var sortOrded = [
+        SortDescriptor(\ExpenseItem.name),
+        SortDescriptor(\ExpenseItem.category)
+    ]
+   
+    
     var body: some View {
         NavigationView{
-                List{
-                    Section(header:Text("Personal")){
-                        ForEach(expenses.filter {$0.type == "Personal"}){ item in
-                            HStack{
-                                VStack(alignment: .leading, content: {
-                                    Text(item.name).font(.headline)
-                                    Text(item.type)
-                                })
-                                Spacer()
-                                
-                                Text(item.amount, format: .currency(code: Locale.current.currency?.identifier ?? "USD" )).foregroundStyle(getColor(for: Int(item.amount)))
+            ExpensesView(categorySelection:categorySelection,sortOrder: sortOrded)
+                .navigationTitle("Expenses")
+                .toolbar {
+                    ToolbarItem(placement:.principal, content: {
+                        Picker("Filter", selection: $categorySelection) {
+                            ForEach(categories, id:\.name){ category in
+                                Text("\(category.emoji)")
                             }
+                        }.pickerStyle(.segmented)
+                    })
+
+                    
+                    ToolbarItemGroup(placement: .topBarTrailing, content: {
+                        Picker("Sort", selection: $sortOrded) {
+                            Text("Sort by Name")
+                                .tag([
+                                    SortDescriptor(\ExpenseItem.name),
+                                    SortDescriptor(\ExpenseItem.amount)
+                                ])
+                            Text("Sort by Amount")
+                                .tag([
+                                    SortDescriptor(\ExpenseItem.amount),
+                                    SortDescriptor(\ExpenseItem.name)
+                                ])
                         }
-                        .onDelete(perform: removeItems)
-                    }
-                    Section(header:Text("Business")){
-                        ForEach(expenses.filter {$0.type == "Business"}){ item in
-                            HStack{
-                                VStack(alignment: .leading, content: {
-                                    Text(item.name).font(.headline)
-                                    Text(item.type)
-                                })
-                                Spacer()
-                                
-                                Text(item.amount, format: .currency(code: Locale.current.currency?.identifier ?? "USD" )).foregroundStyle(getColor(for: Int(item.amount)))
-                            }
+                        NavigationLink(destination: AddView()){
+                            Image(systemName: "plus")
                         }
-                        .onDelete(perform: removeItems)
-                    }
+                    })
                 }
-            .navigationTitle("Expenses")
-            .toolbar {
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    NavigationLink(destination: AddView()){
-                        Image(systemName: "plus")
-                    }
-                }
-            }
-        }
-    }
- 
-    func removeItems(at offsets: IndexSet) {
-        for offset in offsets {
-            // find this book in our query
-            let expense = expenses[offset]
-            // delete it from the context
-            modelContext.delete(expense)
-        }
-    }
-    
-    
-    func getColor(for number: Int) -> Color {
-        if number < 10 {
-            return .blue
-        } else if number < 100 {
-            return .green
-        } else {
-            return .red
         }
     }
     

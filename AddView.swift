@@ -13,7 +13,7 @@ struct AddView: View {
     @Environment(\.modelContext) var modelContext
     
     @State private var name = "New Expense"
-    @State private var type = "Personal"
+    @State private var category = "Personal"
     @State private var amount = 0.0
 
     
@@ -22,8 +22,9 @@ struct AddView: View {
     var body: some View {
             Form{
                 Section{
+                    TextField("Name", text: $name)
                     TextField("Amount", value: $amount, format: .currency(code: "USD")).keyboardType(.decimalPad)
-                    Picker("Type", selection: $type){
+                    Picker("Category", selection: $category){
                         ForEach(types, id: \.self){
                             Text($0)
                         }
@@ -38,7 +39,7 @@ struct AddView: View {
     }
     
     private func saveEntry(){
-        let item = ExpenseItem(name: name, type: type, amount: amount)
+        let item = ExpenseItem(name: name, category: category, amount: amount)
         modelContext.insert(item)
         dismiss()
     }

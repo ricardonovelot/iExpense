@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		8C0027482B2517D300BBD552 /* SwiftUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C0027472B2517D300BBD552 /* SwiftUIView.swift */; };
+		8C74F8572BBC7F12009F8350 /* ExpensesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C74F8562BBC7F12009F8350 /* ExpensesView.swift */; };
+		8C74F8592BBC8413009F8350 /* ExpenseItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C74F8582BBC8413009F8350 /* ExpenseItem.swift */; };
 		8C752C882B05D05100C1170F /* iExpenseApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C752C872B05D05100C1170F /* iExpenseApp.swift */; };
 		8C752C8A2B05D05100C1170F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C752C892B05D05100C1170F /* ContentView.swift */; };
 		8C752C8C2B05D05300C1170F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8C752C8B2B05D05300C1170F /* Assets.xcassets */; };
@@ -17,6 +19,8 @@
 
 /* Begin PBXFileReference section */
 		8C0027472B2517D300BBD552 /* SwiftUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUIView.swift; sourceTree = "<group>"; };
+		8C74F8562BBC7F12009F8350 /* ExpensesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpensesView.swift; sourceTree = "<group>"; };
+		8C74F8582BBC8413009F8350 /* ExpenseItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseItem.swift; sourceTree = "<group>"; };
 		8C752C842B05D05100C1170F /* iExpense.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iExpense.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8C752C872B05D05100C1170F /* iExpenseApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iExpenseApp.swift; sourceTree = "<group>"; };
 		8C752C892B05D05100C1170F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -39,6 +43,8 @@
 		8C752C7B2B05D05100C1170F = {
 			isa = PBXGroup;
 			children = (
+				8C74F8582BBC8413009F8350 /* ExpenseItem.swift */,
+				8C74F8562BBC7F12009F8350 /* ExpensesView.swift */,
 				8C0027472B2517D300BBD552 /* SwiftUIView.swift */,
 				8CFA0A652B1EACD600562542 /* AddView.swift */,
 				8C752C862B05D05100C1170F /* iExpense */,
@@ -144,8 +150,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				8C752C8A2B05D05100C1170F /* ContentView.swift in Sources */,
+				8C74F8592BBC8413009F8350 /* ExpenseItem.swift in Sources */,
 				8C752C882B05D05100C1170F /* iExpenseApp.swift in Sources */,
 				8C0027482B2517D300BBD552 /* SwiftUIView.swift in Sources */,
+				8C74F8572BBC7F12009F8350 /* ExpensesView.swift in Sources */,
 				8CFA0A662B1EACD600562542 /* AddView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

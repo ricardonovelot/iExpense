@@ -3,4 +3,50 @@
    uuid = "F8E19EA3-F654-438B-A6E6-D94438A85FB0"
    type = "1"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "89296F5C-3D5A-487A-9177-D14942C7F09F"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../../../../../var/folders/zn/s84z5g0d69b94yjr19lryjz40000gn/T/swift-generated-sources/@__swiftmacro_8iExpense12ExpensesViewV8expenses5QueryfMp_.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "1"
+            endingLineNumber = "1">
+            <Locations>
+               <Location
+                  uuid = "89296F5C-3D5A-487A-9177-D14942C7F09F - 9e24c15c5f624a52"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "iExpense.ExpensesView.init() -&gt; iExpense.ExpensesView"
+                  moduleName = "iExpense"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///var/folders/zn/s84z5g0d69b94yjr19lryjz40000gn/T/swift-generated-sources/@__swiftmacro_8iExpense12ExpensesViewV8expenses5QueryfMp_.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "1"
+                  endingLineNumber = "1">
+               </Location>
+               <Location
+                  uuid = "89296F5C-3D5A-487A-9177-D14942C7F09F - 25b04e764cf38b4a"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "default argument 1 of iExpense.ExpensesView.init(modelContext: SwiftUI.Environment&lt;SwiftData.ModelContext&gt;, _expenses: _SwiftData_SwiftUI.Query&lt;iExpense.ExpenseItem, Swift.Array&lt;iExpense.ExpenseItem&gt;&gt;) -&gt; iExpense.ExpensesView"
+                  moduleName = "iExpense"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ricardo/My%20Documents/%5B2%5D%20Xcode%20Projects/iExpense/%3Ccompiler-generated%3E"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>
